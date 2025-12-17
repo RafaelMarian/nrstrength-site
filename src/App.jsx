@@ -1,22 +1,36 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // Am adăugat useEffect
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
-import Roadmap from './components/Roadmap'; // Asigură-te că e importat
-import WaitlistModal from './components/WaitlistModal'; // Importăm modalul
+import Roadmap from './components/Roadmap';
+import WaitlistModal from './components/WaitlistModal';
+import Footer from './components/Footer';
 import './App.css';
 import { content } from './content';
 
+// Importăm librăria de animații
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
   const [lang, setLang] = useState('en');
-  const [showModal, setShowModal] = useState(false); // Stare pentru afișare modal
+  const [showModal, setShowModal] = useState(false);
 
   const toggleLang = () => setLang(lang === 'en' ? 'ro' : 'en');
   const text = content[lang];
 
+  // Inițializăm animațiile când se încarcă site-ul
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Durata animației (1 secundă)
+      once: true,     // Animația rulează o singură dată
+      easing: 'ease-out-cubic', // Un stil de mișcare fluid
+    });
+  }, []);
+
   return (
     <div className="app-container">
-      {/* Navbar primește acum funcția de deschidere modal pentru butonul de Download */}
+      {/* Navbar cu funcția de deschidere modal */}
       <Navbar 
         text={text.nav} 
         lang={lang} 
@@ -24,19 +38,22 @@ function App() {
         onOpenModal={() => setShowModal(true)} 
       />
       
-      {/* Hero primește funcția pentru butonul "Start Quest" */}
+      {/* Hero cu funcția de deschidere modal */}
       <Hero 
         text={text.hero} 
         onOpenModal={() => setShowModal(true)} 
       />
       
       <Features text={text.features} />
+      
       <Roadmap text={text.roadmap} />
 
       {/* Afișăm modalul doar dacă showModal este true */}
       {showModal && (
         <WaitlistModal onClose={() => setShowModal(false)} text={text} />
       )}
+
+      <Footer text={text.footer} />
     </div>
   );
 }

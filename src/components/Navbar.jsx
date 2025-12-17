@@ -1,7 +1,6 @@
-// src/components/Navbar.jsx
-function Navbar({ text, lang, toggleLang, onOpenModal }) { // <--- Am adăugat onOpenModal
+function Navbar({ text, lang, toggleLang, onOpenModal }) {
   return (
-    <nav className="navbar">
+    <nav className="navbar" data-aos="fade-down" data-aos-duration="800">
       <div className="logo">NRStrength <span className="version">v1.0</span></div>
       
       <ul className="nav-links">
@@ -13,7 +12,6 @@ function Navbar({ text, lang, toggleLang, onOpenModal }) { // <--- Am adăugat o
         <button onClick={toggleLang} className="lang-btn">
           {lang === 'en' ? '🇷🇴 RO' : '🇬🇧 EN'}
         </button>
-        {/* Adăugăm onClick și aici */}
         <button className="cta-btn small" onClick={onOpenModal}>
           {text.download}
         </button>

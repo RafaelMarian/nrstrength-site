@@ -29,7 +29,10 @@ export const content = {
   phase1: { title: "Phase 1: Cloud Era", desc: "Sync between devices & Social Profiles" },
   phase2: { title: "Phase 2: Guilds", desc: "Clans, Group Quests & Leaderboards" },
   phase3: { title: "Phase 3: Avatars", desc: "Visual character creator that grows muscles with you" }
-}
+},footer: {
+      rights: "All rights reserved.",
+      slogan: "Built for Gamers who Lift."
+    }
   },
   ro: {
     nav: {
@@ -59,7 +62,10 @@ export const content = {
   phase1: { title: "Faza 1: Cloud", desc: "Sincronizare între dispozitive & Profil Social" },
   phase2: { title: "Faza 2: Bresle", desc: "Clanuri, Misiuni de Grup & Clasamente" },
   phase3: { title: "Faza 3: Avatare", desc: "Creator vizual de caractere care fac mușchi odată cu tine" }
-}
+},footer: {
+      rights: "Toate drepturile rezervate.",
+      slogan: "Construit pentru Gamerii care Trag de Fiare."
+    }
     
   }
 };
