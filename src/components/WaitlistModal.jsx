@@ -18,7 +18,7 @@ function WaitlistModal({ onClose, text }) {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "waitlist", email: email }),
+      body: encode({ "form-name": "contact", email: email }),
     })
       .then(() => setStatus('success'))
       .catch(() => setStatus('error'));
