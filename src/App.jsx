@@ -1,33 +1,42 @@
-// src/App.jsx
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
+import Roadmap from './components/Roadmap'; // Asigură-te că e importat
+import WaitlistModal from './components/WaitlistModal'; // Importăm modalul
 import './App.css';
-import { content } from './content'; // Importăm textele
+import { content } from './content';
 
 function App() {
-  // Starea pentru limbă (default 'en')
   const [lang, setLang] = useState('en');
-  
-  // Funcție simplă să schimbăm limba
-  const toggleLang = () => {
-    setLang(lang === 'en' ? 'ro' : 'en');
-  };
+  const [showModal, setShowModal] = useState(false); // Stare pentru afișare modal
 
-  // Extragem textele pentru limba curentă
+  const toggleLang = () => setLang(lang === 'en' ? 'ro' : 'en');
   const text = content[lang];
 
   return (
     <div className="app-container">
-      {/* Trimitem textele și funcția de schimbare limbă la Navbar */}
-      <Navbar text={text.nav} lang={lang} toggleLang={toggleLang} />
+      {/* Navbar primește acum funcția de deschidere modal pentru butonul de Download */}
+      <Navbar 
+        text={text.nav} 
+        lang={lang} 
+        toggleLang={toggleLang} 
+        onOpenModal={() => setShowModal(true)} 
+      />
       
-      <Hero text={text.hero} />
+      {/* Hero primește funcția pentru butonul "Start Quest" */}
+      <Hero 
+        text={text.hero} 
+        onOpenModal={() => setShowModal(true)} 
+      />
       
       <Features text={text.features} />
-      
-      {/* Vom adăuga Roadmap mai târziu */}
+      <Roadmap text={text.roadmap} />
+
+      {/* Afișăm modalul doar dacă showModal este true */}
+      {showModal && (
+        <WaitlistModal onClose={() => setShowModal(false)} text={text} />
+      )}
     </div>
   );
 }

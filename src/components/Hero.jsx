@@ -1,16 +1,21 @@
 // src/components/Hero.jsx
-function Hero({ text }) {
+
+// 1. Adăugăm 'onOpenModal' aici, între acolade
+function Hero({ text, onOpenModal }) {
   return (
     <header className="hero">
       <div className="hero-content">
         <h1 className="glitch-text">{text.title}</h1>
         <p>{text.subtitle}</p>
-        <button className="cta-btn big">{text.cta}</button>
+        
+        {/* 2. Păstrăm DOAR butonul cu onClick */}
+        <button className="cta-btn big" onClick={onOpenModal}>
+          {text.cta}
+        </button>
       </div>
-      {/* Aici vom pune o poză cu telefonul mai târziu */}
-      <div className="hero-image-placeholder">
-        📱 App Screenshot
-      </div>
+
+      {/* Telefonul Cyberpunk (designul e făcut din CSS, deci div-ul poate rămâne gol sau cu text) */}
+      <div className="hero-image-placeholder"></div>
     </header>
   );
 }

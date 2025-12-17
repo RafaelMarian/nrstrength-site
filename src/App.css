@@ -139,18 +139,62 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Telefonul Cyberpunk */
 .hero-image-placeholder {
   width: 300px;
   height: 600px;
-  background: linear-gradient(45deg, var(--card-bg), #2d3748);
-  border-radius: 30px;
-  border: 4px solid var(--text-muted);
+  background-color: #000; /* Ecran negru */
+  border: 4px solid #334155; /* Rama telefonului */
+  border-radius: 40px; /* Colțuri rotunjite tip iPhone */
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2); /* Umbra Neon Verde */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0; /* Important să nu se turtească */
+}
+
+/* Efectul de Hover (când pui mouse-ul pe el) */
+.hero-image-placeholder:hover {
+  transform: scale(1.02) rotate(-2deg);
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.4); /* Neon Mov la hover */
+  border-color: var(--secondary);
+}
+
+/* "Notch-ul" de sus (Camera) */
+.hero-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 25px;
+  background-color: #334155;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 2;
+}
+
+/* Simulare de interfață în interior */
+.hero-image-placeholder::after {
+  content: 'NRStrength \A \2694 \A PRESS START'; /* Text + Săbii + Start */
+  white-space: pre; /* Permite rânduri noi */
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
   font-size: 1.5rem;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-  flex-shrink: 0; /* Previne turtirea imaginii */
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary);
+  animation: pulse 2s infinite;
+}
+
+/* Animația textului din telefon */
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; text-shadow: 0 0 20px var(--primary); }
+  100% { opacity: 0.5; }
 }
 
 /* --- 5. Features Section --- */
@@ -280,3 +324,67 @@ body {
   .timeline-item::after { left: 21px; }
   .timeline-item.right::after { left: 21px; }
 }
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85); /* Fundal întunecat transparent */
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: 16px;
+  border: 2px solid var(--primary);
+  width: 90%;
+  max-width: 450px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 255, 136, 0.15);
+  animation: slideUp 0.3s;
+}
+
+.modal-content h2 { margin-top: 0; color: var(--primary); }
+.modal-content p { color: var(--text-muted); margin-bottom: 20px; }
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: none; border: none;
+  color: var(--text-muted);
+  font-size: 2rem; cursor: pointer;
+}
+.close-btn:hover { color: white; }
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.waitlist-form input {
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--text-muted);
+  background: rgba(0,0,0,0.2);
+  color: white;
+  font-size: 1rem;
+}
+
+.waitlist-form input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(0,255,136,0.2);
+}
+
+.success-message h3 { color: var(--secondary); font-size: 1.5rem; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); } to { transform: translateY(0); } }
