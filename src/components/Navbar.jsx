@@ -15,7 +15,8 @@ function Navbar({ text, lang, toggleLang, onOpenModal }) {
   const tNav = text.nav || { 
     features: "Features", 
     roadmap: "Roadmap", 
-    download: "Get App" 
+    download: "Get App" ,
+    cards: "Cards "
   };
 
   // 2. Funcție Toggle Dark Mode
@@ -63,6 +64,11 @@ function Navbar({ text, lang, toggleLang, onOpenModal }) {
         <li>
           <Link to="/future" className={location.pathname === '/future' ? 'active-link' : ''}>
             {tPages.future || "Dev Log"}
+          </Link>
+        </li>
+        <li>
+          <Link to="/collection" className={location.pathname === '/collection' ? 'active-link' : ''}>
+            {tNav.cards}
           </Link>
         </li>
       </ul>

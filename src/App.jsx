@@ -20,6 +20,7 @@ import FuturePage from './pages/FuturePage';
 import './App.css';
 import { content } from './content';
 import LegalPage from './pages/LegalPage';
+import CollectionPage from './pages/CollectionPage'; // Importăm Cărțile
 
 // Componenta Home (vechiul Landing Page)
 const Home = ({ text, onOpenModal }) => (
@@ -59,6 +60,7 @@ function App() {
           <Route path="/future" element={<FuturePage text={text} />} />
           <Route path="/privacy" element={<LegalPage text={text} type="privacy" />} />
           <Route path="/terms" element={<LegalPage text={text} type="terms" />} />
+          <Route path="/collection" element={<CollectionPage text={text} />} /> {/* Cards */}
         </Routes>
 
         {showModal && <WaitlistModal onClose={() => setShowModal(false)} text={text} />}

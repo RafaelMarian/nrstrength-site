@@ -1,11 +1,12 @@
-// src/content.js - VERSIUNEA FINALĂ CU NUTRIȚIE ȘI LEGAL
+// src/content.js - VERSIUNEA FINALĂ CU NUTRIȚIE, LEGAL, ȘI COLEȚIE CĂRȚI
 
 export const content = {
   en: {
     nav: {
       features: "Features",
       roadmap: "Roadmap",
-      download: "Download App"
+      download: "Download App",
+      cards: "Cards "
     },
     hero: {
       title: "Level Up Your Life.",
@@ -310,6 +311,95 @@ export const content = {
         { title: "State Management", desc: "Reactive Provider updates 'Calories Remaining' instantly across the UI." }
       ]
     },
+    collectionPage: {
+      title: "Inventory",
+      subtitle: "Gotta lift 'em all. Collect loot from gym battles.",
+      filters: { 
+        all: "All", 
+        common: "Common", 
+        rare: "Rare", 
+        epic: "Epic", 
+        legendary: "Legendary" 
+      },
+      cards: [
+        // ============================================================
+        // --- LEGENDARY (1) ---
+        // ============================================================
+        { id: 'l1', name: 'Mr. Olympia', rarity: 'legendary', image: '/assets/img/cards/Mr.Olympia.jpeg', desc: "Trofeul suprem. Ai reușit.", stats: { str: 999, respect: 1000 } },
+
+        // ============================================================
+        // --- EPIC (8) ---
+        // ============================================================
+        { id: 'e1', name: 'Creatine Mono', rarity: 'epic', image: '/assets/img/cards/CreatineMono.jpeg', desc: "Pudra albă a puterii. 5g zilnic.", stats: { str: 85, energy: 90 } },
+        { id: 'e2', name: 'Heavy Dumbbell', rarity: 'epic', image: '/assets/img/cards/HeavyDumbbell.jpeg', desc: "Fiare vechi. Destul de grele să zdrobească ego-uri.", stats: { str: 95, ego: -50 } },
+        { id: 'e3', name: 'Whey Isolate', rarity: 'epic', image: '/assets/img/cards/WheyIsolate.jpeg', desc: "90% proteine. Gust scump.", stats: { str: 80, wealth: -20 } },
+        { id: 'e4', name: 'Lifting Shoes', rarity: 'epic', image: '/assets/img/cards/LiftingShoes.jpeg', desc: "Toc solid pentru genuflexiuni adânci.", stats: { stability: 100, style: 50 } },
+        { id: 'e5', name: 'Massage Gun', rarity: 'epic', image: '/assets/img/cards/MassageGun.jpeg', desc: "Terapie percutivă. Sună ca o bormașină.", stats: { recovery: 100, noise: 80 } },
+        { id: 'e6', name: 'EZ Curl Bar', rarity: 'epic', image: '/assets/img/cards/EZCurlBar.jpeg', desc: "Bară curbată pentru bicepși masivi.", stats: { biceps: 100, wristPain: -50 } },
+        { id: 'e7', name: 'Pre-Workout', rarity: 'epic', image: '/assets/img/cards/Pre-Workout.jpeg', desc: "Furnicături de Beta-Alanină.", stats: { energy: 100, focus: 100 } },
+        { id: 'e8', name: 'Smart Watch', rarity: 'epic', image: '/assets/img/cards/SmartWatch.jpeg', desc: "Monitorizează fiecare bătaie. Nu muri.", stats: { tech: 100, anxiety: 20 } },
+
+        // ============================================================
+        // --- RARE (12) ---
+        // ============================================================
+        { id: 'r1', name: 'Pro Shaker', rarity: 'rare', image: '/assets/img/cards/ProShaker.jpeg', desc: "Tehnologie anti-scurgere. Are bilă de metal.", stats: { str: 10, mix: 100 } },
+        { id: 'r2', name: 'ZMA', rarity: 'rare', image: '/assets/img/cards/ZMA.jpeg', desc: "Somn adânc, vise mari.", stats: { recovery: 80, dreams: 100 } },
+        { id: 'r3', name: 'Wrist Wraps', rarity: 'rare', image: '/assets/img/cards/WristWraps.jpeg', desc: "Salvează încheieturile la împins greu.", stats: { support: 70, str: 20 } },
+        { id: 'r4', name: 'Knee Sleeves', rarity: 'rare', image: '/assets/img/cards/KneeSleeves.jpeg', desc: "Ține articulațiile calde.", stats: { warmth: 80, bounce: 30 } },
+        { id: 'r5', name: 'Liquid Chalk', rarity: 'rare', image: '/assets/img/cards/LiquidChalk.jpeg', desc: "Fără mizerie, priză maximă. Stil Ninja.", stats: { grip: 90, mess: 0 } },
+        { id: 'r6', name: 'Weight Vest', rarity: 'rare', image: '/assets/img/cards/WeightVest.jpeg', desc: "+10kg gravitație. Pentru cei hardcore.", stats: { difficulty: 90, str: 40 } },
+        { id: 'r7', name: 'Lifting Straps', rarity: 'rare', image: '/assets/img/cards/LiftingStraps.jpeg', desc: "Nu te mai ține priza? Acum te ține.", stats: { grip: 100, forearms: -10 } },
+        { id: 'r8', name: 'Omega 3', rarity: 'rare', image: '/assets/img/cards/Omega3.jpeg', desc: "Puterea creierului și lubrifiere articulații.", stats: { health: 50, iq: 10 } },
+        { id: 'r9', name: 'Peanut Butter', rarity: 'rare', image: '/assets/img/cards/PeanutButter.jpeg', desc: "Bombă calorică. Delicios.", stats: { calories: 500, joy: 100 } },
+        { id: 'r10', name: 'Gym Buddy', rarity: 'rare', image: '/assets/img/cards/GymBuddy.jpeg', desc: "Spawn rar. Ajută la asistență.", stats: { safety: 100, motivation: 50 } },
+        { id: 'r11', name: 'Foam Roller', rarity: 'rare', image: '/assets/img/cards/FoamRoller.jpeg', desc: "Doare atât de bine.", stats: { pain: 80, mobility: 50 } },
+        { id: 'r12', name: 'Yoga Mat', rarity: 'rare', image: '/assets/img/cards/YogaMat.jpeg', desc: "Spațiul meu sigur.", stats: { comfort: 60, zen: 100 } },
+
+        // ============================================================
+        // --- COMMON (40) ---
+        // ============================================================
+        { id: 'c1', name: 'Gym Socks', rarity: 'common', image: '/assets/img/cards/GymSocks.jpeg', desc: "Albe și simple. Măcar se potrivesc.", stats: { style: 5, smell: 0 } },
+        { id: 'c2', name: 'Plastic Bottle', rarity: 'common', image: '/assets/img/cards/PlasticBottle.jpeg', desc: "Refolosită de 50 de ori. Microplastice incluse.", stats: { health: -5, hydration: 50 } },
+        { id: 'c3', name: 'Sweat Towel', rarity: 'common', image: '/assets/img/cards/SweatTowel.jpeg', desc: "Pentru șters banca. Nu fi tipul ăla.", stats: { hygiene: 50, respect: 10 } },
+        { id: 'c4', name: 'Banana', rarity: 'common', image: '/assets/img/cards/Banana.jpeg', desc: "Pre-workout natural. Pompă de potasiu.", stats: { energy: 30, digest: 100 } },
+        { id: 'c5', name: 'Locker Key', rarity: 'common', image: '/assets/img/cards/LockerKey.jpeg', desc: "Nu o pierde. Pedeapsa sunt burpees.", stats: { anxiety: 20, access: 100 } },
+        { id: 'c6', name: 'Protein Bar', rarity: 'common', image: '/assets/img/cards/ProteinBar.jpeg', desc: "Gust de carton, efect magic.", stats: { protein: 20, taste: 5 } },
+        { id: 'c7', name: 'Elastic Band', rarity: 'common', image: '/assets/img/cards/ElasticBand.jpeg', desc: "Risc să te plesnească, dar bun la încălzire.", stats: { warmup: 50, danger: 20 } },
+        { id: 'c8', name: 'Chalk Block', rarity: 'common', image: '/assets/img/cards/ChalkBlock.jpeg', desc: "Face mizerie. Patronul te urăște.", stats: { grip: 80, mess: 100 } },
+        { id: 'c9', name: 'Headband', rarity: 'common', image: '/assets/img/cards/Headband.jpeg', desc: "Stil anii 80. Ține transpirația departe.", stats: { style: 80, vision: 100 } },
+        { id: 'c10', name: 'Broccoli', rarity: 'common', image: '/assets/img/cards/Broccoli.jpeg', desc: "Gust: 0/10. Sănătate: 10/10.", stats: { health: 100, taste: 0 } },
+        { id: 'c11', name: 'Chicken Breast', rarity: 'common', image: '/assets/img/cards/ChickenBreast.jpeg', desc: "Uscat și fără gust. Soarta culturistului.", stats: { protein: 30, joy: -10 } },
+        { id: 'c12', name: 'White Rice', rarity: 'common', image: '/assets/img/cards/WhiteRice.jpeg', desc: "Încărcare cu carbohidrați. Ușor de digerat.", stats: { carbs: 40, energy: 40 } },
+        { id: 'c13', name: 'Oats', rarity: 'common', image: '/assets/img/cards/Oats.jpeg', desc: "Micul dejun al campionilor (și cailor).", stats: { carbs: 50, pump: 20 } },
+        { id: 'c14', name: 'Coffee', rarity: 'common', image: '/assets/img/cards/Coffee.jpeg', desc: "Pre-workout ieftin. Tremurici garantat.", stats: { energy: 60, jitters: 80 } },
+        { id: 'c15', name: 'Lost Airpod', rarity: 'common', image: '/assets/img/cards/LostAirpod.jpeg', desc: "L-ai găsit pe stângul. Unde e dreptul?", stats: { music: 50, sadness: 50 } },
+        { id: 'c16', name: 'Gym Card', rarity: 'common', image: '/assets/img/cards/GymCard.jpeg', desc: "Nu uita să scanezi.", stats: { access: 100, memory: 10 } },
+        { id: 'c17', name: 'Skipping Rope', rarity: 'common', image: '/assets/img/cards/SkippingRope.jpeg', desc: "Cardio? Noi nu facem asta aici.", stats: { cardio: 100, fatigue: 100 } },
+        { id: 'c18', name: 'Tupperware', rarity: 'common', image: '/assets/img/cards/Tupperware.jpeg', desc: "Caserolă pătată cu sos de roșii.", stats: { prep: 100, stain: 100 } },
+        { id: 'c19', name: 'Protein Scoop', rarity: 'common', image: '/assets/img/cards/ProteinScoop.jpeg', desc: "Îngropată la fundul cutiei.", stats: { digging: 100, protein: 25 } },
+        { id: 'c20', name: 'Flip Flops', rarity: 'common', image: '/assets/img/cards/FlipFlops.jpeg', desc: "Papuci de duș. Esențiali pentru igienă.", stats: { hygiene: 100, style: 0 } },
+        { id: 'c21', name: 'Tangled Earphones', rarity: 'common', image: '/assets/img/cards/TangledEarphones.jpeg', desc: "10 minute de descurcat înainte de antrenament.", stats: { rage: 50, music: 100 } },
+        { id: 'c22', name: 'Warm Water', rarity: 'common', image: '/assets/img/cards/WarmWater.jpeg', desc: "De la robinet. Deloc răcoritoare.", stats: { hydration: 30, taste: -20 } },
+        { id: 'c23', name: 'Generic Shaker', rarity: 'common', image: '/assets/img/cards/GenericShaker.jpeg', desc: "Curge puțin. Miroase ciudat.", stats: { mix: 50, smell: 80 } },
+        { id: 'c24', name: 'Green Apple', rarity: 'common', image: '/assets/img/cards/GreenApple.jpeg', desc: "Față acră garantată. Fibre bune totuși.", stats: { health: 20, sour: 100 } },
+        { id: 'c25', name: 'Cheap Padlock', rarity: 'common', image: '/assets/img/cards/CheapPadlock.jpeg', desc: "Ai uitat codul? Cheamă foarfeca.", stats: { security: 20, panic: 50 } },
+        { id: 'c26', name: 'Cotton T-Shirt', rarity: 'common', image: '/assets/img/cards/CottonT-Shirt.jpeg', desc: "Devine greu când e ud. Greșeală de începător.", stats: { comfort: 50, weight: 10 } },
+        { id: 'c27', name: 'Canned Tuna', rarity: 'common', image: '/assets/img/cards/CannedTuna.jpeg', desc: "O deschizi în vestiar? Iei ban.", stats: { protein: 25, smell: 100 } },
+        { id: 'c28', name: '3-in-1 Soap', rarity: 'common', image: '/assets/img/cards/3-in-1Soap.jpeg', desc: "Șampon, gel de duș și degresant motor.", stats: { clean: 50, drySkin: 100 } },
+        { id: 'c29', name: 'Paper Towel', rarity: 'common', image: '/assets/img/cards/PaperTowel.jpeg', desc: "Aspru pe față, mai bun decât nimic.", stats: { absorb: 30, scratch: 20 } },
+        { id: 'c30', name: 'Spinach', rarity: 'common', image: '/assets/img/cards/Spinach.jpeg', desc: "Stil Popeye. Se ofilește în 2 secunde.", stats: { iron: 10, volume: -50 } },
+        { id: 'c31', name: 'Instant Coffee', rarity: 'common', image: '/assets/img/cards/InstantCoffee.jpeg', desc: "Doar apă fierbinte cu boabe. Trezește-te!", stats: { energy: 40, taste: 10 } },
+        { id: 'c32', name: 'Brown Rice', rarity: 'common', image: '/assets/img/cards/BrownRice.jpeg', desc: "Durează o veșnicie să fiarbă.", stats: { health: 60, time: -50 } },
+        { id: 'c33', name: 'Hair Tie', rarity: 'common', image: '/assets/img/cards/HairTie.jpeg', desc: "Mereu dispare când ai nevoie.", stats: { utility: 100, stealth: 100 } },
+        { id: 'c34', name: 'Day Pass', rarity: 'common', image: '/assets/img/cards/DayPass.jpeg', desc: "O singură intrare. Fă-o să conteze.", stats: { cost: 50, time: 24 } },
+        { id: 'c35', name: 'Yoga Ball', rarity: 'common', image: '/assets/img/cards/YogaBall.jpeg', desc: "Amuzant să sari pe ea. Greu să stai pe ea.", stats: { balance: 50, fun: 80 } },
+        { id: 'c36', name: 'Plastic Fork', rarity: 'common', image: '/assets/img/cards/PlasticFork.jpeg', desc: "S-a rupt când mâncai friptura.", stats: { utility: 10, durability: 0 } },
+        { id: 'c37', name: 'Rusty Plate', rarity: 'common', image: '/assets/img/cards/RustyPlate.jpeg', desc: "Fiare vechi. Nevoie de antitetanos?", stats: { weight: 20, rust: 100 } },
+        { id: 'c38', name: 'Out of Order', rarity: 'common', image: '/assets/img/cards/OutofOrder.jpeg', desc: "Aparatul pe care îl voiai e stricat.", stats: { disappointment: 100, rage: 50 } },
+        { id: 'c39', name: 'Mirror Selfie', rarity: 'common', image: '/assets/img/cards/MirrorSelfie.jpeg', desc: "Te-ai antrenat dacă nu ai postat?", stats: { narcissism: 100, gains: 0 } },
+        { id: 'c40', name: 'Callused Hands', rarity: 'common', image: '/assets/img/cards/CallusedHands.jpeg', desc: "Strângere de mână aspră. Insignă de onoare.", stats: { grip: 20, soft: -100 } }
+      ]
+    },
     legal: {
       privacy_title: "Privacy Policy",
       terms_title: "Terms & Medical Disclaimer",
@@ -331,7 +421,8 @@ export const content = {
     nav: {
       features: "Funcționalități",
       roadmap: "Roadmap",
-      download: "Descarcă Aplicația"
+      download: "Descarcă Aplicația",
+      cards: "Cărți"
     },
     hero: {
       title: "Crește-ți Nivelul.",
@@ -634,6 +725,95 @@ export const content = {
         { title: "Sincronizare Fază", desc: "Observer Pattern. Serviciul Nutriție ascultă schimbările de stare din Serviciul Antrenament." },
         { title: "DB Local", desc: "Alimentele custom sunt stocate în cutia Hive 'user_foods' pentru acces offline." },
         { title: "State Management", desc: "Provider Reactiv actualizează 'Calorii Rămase' instant în tot UI-ul." }
+      ]
+    },
+   collectionPage: {
+      title: "Inventar", // <--- Traducere Titlu
+      subtitle: "Câștigă iteme din bătăliile de la sală.", // <--- Traducere Subtitlu
+      filters: { 
+        all: "Toate", // <--- Traducere Filtru
+        common: "Comun", 
+        rare: "Rar", 
+        epic: "Epic", 
+        legendary: "Legendar" 
+      },
+      cards: [
+        // ============================================================
+        // --- LEGENDARY (1) ---
+        // ============================================================
+        { id: 'l1', name: 'Mr. Olympia', rarity: 'legendary', image: '/assets/img/cards/Mr.Olympia.jpeg', desc: "Trofeul suprem. Ai reușit.", stats: { str: 999, respect: 1000 } },
+
+        // ============================================================
+        // --- EPIC (8) ---
+        // ============================================================
+        { id: 'e1', name: 'Creatine Mono', rarity: 'epic', image: '/assets/img/cards/CreatineMono.jpeg', desc: "Pudra albă a puterii. 5g zilnic.", stats: { str: 85, energy: 90 } },
+        { id: 'e2', name: 'Heavy Dumbbell', rarity: 'epic', image: '/assets/img/cards/HeavyDumbbell.jpeg', desc: "Fiare vechi. Destul de grele să zdrobească ego-uri.", stats: { str: 95, ego: -50 } },
+        { id: 'e3', name: 'Whey Isolate', rarity: 'epic', image: '/assets/img/cards/WheyIsolate.jpeg', desc: "90% proteine. Gust scump.", stats: { str: 80, wealth: -20 } },
+        { id: 'e4', name: 'Lifting Shoes', rarity: 'epic', image: '/assets/img/cards/LiftingShoes.jpeg', desc: "Toc solid pentru genuflexiuni adânci.", stats: { stability: 100, style: 50 } },
+        { id: 'e5', name: 'Massage Gun', rarity: 'epic', image: '/assets/img/cards/MassageGun.jpeg', desc: "Terapie percutivă. Sună ca o bormașină.", stats: { recovery: 100, noise: 80 } },
+        { id: 'e6', name: 'EZ Curl Bar', rarity: 'epic', image: '/assets/img/cards/EZCurlBar.jpeg', desc: "Bară curbată pentru bicepși masivi.", stats: { biceps: 100, wristPain: -50 } },
+        { id: 'e7', name: 'Pre-Workout', rarity: 'epic', image: '/assets/img/cards/Pre-Workout.jpeg', desc: "Furnicături de Beta-Alanină.", stats: { energy: 100, focus: 100 } },
+        { id: 'e8', name: 'Smart Watch', rarity: 'epic', image: '/assets/img/cards/SmartWatch.jpeg', desc: "Monitorizează fiecare bătaie. Nu muri.", stats: { tech: 100, anxiety: 20 } },
+
+        // ============================================================
+        // --- RARE (12) ---
+        // ============================================================
+        { id: 'r1', name: 'Pro Shaker', rarity: 'rare', image: '/assets/img/cards/ProShaker.jpeg', desc: "Tehnologie anti-scurgere. Are bilă de metal.", stats: { str: 10, mix: 100 } },
+        { id: 'r2', name: 'ZMA', rarity: 'rare', image: '/assets/img/cards/ZMA.jpeg', desc: "Somn adânc, vise mari.", stats: { recovery: 80, dreams: 100 } },
+        { id: 'r3', name: 'Wrist Wraps', rarity: 'rare', image: '/assets/img/cards/WristWraps.jpeg', desc: "Salvează încheieturile la împins greu.", stats: { support: 70, str: 20 } },
+        { id: 'r4', name: 'Knee Sleeves', rarity: 'rare', image: '/assets/img/cards/KneeSleeves.jpeg', desc: "Ține articulațiile calde.", stats: { warmth: 80, bounce: 30 } },
+        { id: 'r5', name: 'Liquid Chalk', rarity: 'rare', image: '/assets/img/cards/LiquidChalk.jpeg', desc: "Fără mizerie, priză maximă. Stil Ninja.", stats: { grip: 90, mess: 0 } },
+        { id: 'r6', name: 'Weight Vest', rarity: 'rare', image: '/assets/img/cards/WeightVest.jpeg', desc: "+10kg gravitație. Pentru cei hardcore.", stats: { difficulty: 90, str: 40 } },
+        { id: 'r7', name: 'Lifting Straps', rarity: 'rare', image: '/assets/img/cards/LiftingStraps.jpeg', desc: "Nu te mai ține priza? Acum te ține.", stats: { grip: 100, forearms: -10 } },
+        { id: 'r8', name: 'Omega 3', rarity: 'rare', image: '/assets/img/cards/Omega3.jpeg', desc: "Puterea creierului și lubrifiere articulații.", stats: { health: 50, iq: 10 } },
+        { id: 'r9', name: 'Peanut Butter', rarity: 'rare', image: '/assets/img/cards/PeanutButter.jpeg', desc: "Bombă calorică. Delicios.", stats: { calories: 500, joy: 100 } },
+        { id: 'r10', name: 'Gym Buddy', rarity: 'rare', image: '/assets/img/cards/GymBuddy.jpeg', desc: "Spawn rar. Ajută la asistență.", stats: { safety: 100, motivation: 50 } },
+        { id: 'r11', name: 'Foam Roller', rarity: 'rare', image: '/assets/img/cards/FoamRoller.jpeg', desc: "Doare atât de bine.", stats: { pain: 80, mobility: 50 } },
+        { id: 'r12', name: 'Yoga Mat', rarity: 'rare', image: '/assets/img/cards/YogaMat.jpeg', desc: "Spațiul meu sigur.", stats: { comfort: 60, zen: 100 } },
+
+        // ============================================================
+        // --- COMMON (40) ---
+        // ============================================================
+        { id: 'c1', name: 'Gym Socks', rarity: 'common', image: '/assets/img/cards/GymSocks.jpeg', desc: "Albe și simple. Măcar se potrivesc.", stats: { style: 5, smell: 0 } },
+        { id: 'c2', name: 'Plastic Bottle', rarity: 'common', image: '/assets/img/cards/PlasticBottle.jpeg', desc: "Refolosită de 50 de ori. Microplastice incluse.", stats: { health: -5, hydration: 50 } },
+        { id: 'c3', name: 'Sweat Towel', rarity: 'common', image: '/assets/img/cards/SweatTowel.jpeg', desc: "Pentru șters banca. Nu fi tipul ăla.", stats: { hygiene: 50, respect: 10 } },
+        { id: 'c4', name: 'Banana', rarity: 'common', image: '/assets/img/cards/Banana.jpeg', desc: "Pre-workout natural. Pompă de potasiu.", stats: { energy: 30, digest: 100 } },
+        { id: 'c5', name: 'Locker Key', rarity: 'common', image: '/assets/img/cards/LockerKey.jpeg', desc: "Nu o pierde. Pedeapsa sunt burpees.", stats: { anxiety: 20, access: 100 } },
+        { id: 'c6', name: 'Protein Bar', rarity: 'common', image: '/assets/img/cards/ProteinBar.jpeg', desc: "Gust de carton, efect magic.", stats: { protein: 20, taste: 5 } },
+        { id: 'c7', name: 'Elastic Band', rarity: 'common', image: '/assets/img/cards/ElasticBand.jpeg', desc: "Risc să te plesnească, dar bun la încălzire.", stats: { warmup: 50, danger: 20 } },
+        { id: 'c8', name: 'Chalk Block', rarity: 'common', image: '/assets/img/cards/ChalkBlock.jpeg', desc: "Face mizerie. Patronul te urăște.", stats: { grip: 80, mess: 100 } },
+        { id: 'c9', name: 'Headband', rarity: 'common', image: '/assets/img/cards/Headband.jpeg', desc: "Stil anii 80. Ține transpirația departe.", stats: { style: 80, vision: 100 } },
+        { id: 'c10', name: 'Broccoli', rarity: 'common', image: '/assets/img/cards/Broccoli.jpeg', desc: "Gust: 0/10. Sănătate: 10/10.", stats: { health: 100, taste: 0 } },
+        { id: 'c11', name: 'Chicken Breast', rarity: 'common', image: '/assets/img/cards/ChickenBreast.jpeg', desc: "Uscat și fără gust. Soarta culturistului.", stats: { protein: 30, joy: -10 } },
+        { id: 'c12', name: 'White Rice', rarity: 'common', image: '/assets/img/cards/WhiteRice.jpeg', desc: "Încărcare cu carbohidrați. Ușor de digerat.", stats: { carbs: 40, energy: 40 } },
+        { id: 'c13', name: 'Oats', rarity: 'common', image: '/assets/img/cards/Oats.jpeg', desc: "Micul dejun al campionilor (și cailor).", stats: { carbs: 50, pump: 20 } },
+        { id: 'c14', name: 'Coffee', rarity: 'common', image: '/assets/img/cards/Coffee.jpeg', desc: "Pre-workout ieftin. Tremurici garantat.", stats: { energy: 60, jitters: 80 } },
+        { id: 'c15', name: 'Lost Airpod', rarity: 'common', image: '/assets/img/cards/LostAirpod.jpeg', desc: "L-ai găsit pe stângul. Unde e dreptul?", stats: { music: 50, sadness: 50 } },
+        { id: 'c16', name: 'Gym Card', rarity: 'common', image: '/assets/img/cards/GymCard.jpeg', desc: "Nu uita să scanezi.", stats: { access: 100, memory: 10 } },
+        { id: 'c17', name: 'Skipping Rope', rarity: 'common', image: '/assets/img/cards/SkippingRope.jpeg', desc: "Cardio? Noi nu facem asta aici.", stats: { cardio: 100, fatigue: 100 } },
+        { id: 'c18', name: 'Tupperware', rarity: 'common', image: '/assets/img/cards/Tupperware.jpeg', desc: "Caserolă pătată cu sos de roșii.", stats: { prep: 100, stain: 100 } },
+        { id: 'c19', name: 'Protein Scoop', rarity: 'common', image: '/assets/img/cards/ProteinScoop.jpeg', desc: "Îngropată la fundul cutiei.", stats: { digging: 100, protein: 25 } },
+        { id: 'c20', name: 'Flip Flops', rarity: 'common', image: '/assets/img/cards/FlipFlops.jpeg', desc: "Papuci de duș. Esențiali pentru igienă.", stats: { hygiene: 100, style: 0 } },
+        { id: 'c21', name: 'Tangled Earphones', rarity: 'common', image: '/assets/img/cards/TangledEarphones.jpeg', desc: "10 minute de descurcat înainte de antrenament.", stats: { rage: 50, music: 100 } },
+        { id: 'c22', name: 'Warm Water', rarity: 'common', image: '/assets/img/cards/WarmWater.jpeg', desc: "De la robinet. Deloc răcoritoare.", stats: { hydration: 30, taste: -20 } },
+        { id: 'c23', name: 'Generic Shaker', rarity: 'common', image: '/assets/img/cards/GenericShaker.jpeg', desc: "Curge puțin. Miroase ciudat.", stats: { mix: 50, smell: 80 } },
+        { id: 'c24', name: 'Green Apple', rarity: 'common', image: '/assets/img/cards/GreenApple.jpeg', desc: "Față acră garantată. Fibre bune totuși.", stats: { health: 20, sour: 100 } },
+        { id: 'c25', name: 'Cheap Padlock', rarity: 'common', image: '/assets/img/cards/CheapPadlock.jpeg', desc: "Ai uitat codul? Cheamă foarfeca.", stats: { security: 20, panic: 50 } },
+        { id: 'c26', name: 'Cotton T-Shirt', rarity: 'common', image: '/assets/img/cards/CottonT-Shirt.jpeg', desc: "Devine greu când e ud. Greșeală de începător.", stats: { comfort: 50, weight: 10 } },
+        { id: 'c27', name: 'Canned Tuna', rarity: 'common', image: '/assets/img/cards/CannedTuna.jpeg', desc: "O deschizi în vestiar? Iei ban.", stats: { protein: 25, smell: 100 } },
+        { id: 'c28', name: '3-in-1 Soap', rarity: 'common', image: '/assets/img/cards/3-in-1Soap.jpeg', desc: "Șampon, gel de duș și degresant motor.", stats: { clean: 50, drySkin: 100 } },
+        { id: 'c29', name: 'Paper Towel', rarity: 'common', image: '/assets/img/cards/PaperTowel.jpeg', desc: "Aspru pe față, mai bun decât nimic.", stats: { absorb: 30, scratch: 20 } },
+        { id: 'c30', name: 'Spinach', rarity: 'common', image: '/assets/img/cards/Spinach.jpeg', desc: "Stil Popeye. Se ofilește în 2 secunde.", stats: { iron: 10, volume: -50 } },
+        { id: 'c31', name: 'Instant Coffee', rarity: 'common', image: '/assets/img/cards/InstantCoffee.jpeg', desc: "Doar apă fierbinte cu boabe. Trezește-te!", stats: { energy: 40, taste: 10 } },
+        { id: 'c32', name: 'Brown Rice', rarity: 'common', image: '/assets/img/cards/BrownRice.jpeg', desc: "Durează o veșnicie să fiarbă.", stats: { health: 60, time: -50 } },
+        { id: 'c33', name: 'Hair Tie', rarity: 'common', image: '/assets/img/cards/HairTie.jpeg', desc: "Mereu dispare când ai nevoie.", stats: { utility: 100, stealth: 100 } },
+        { id: 'c34', name: 'Day Pass', rarity: 'common', image: '/assets/img/cards/DayPass.jpeg', desc: "O singură intrare. Fă-o să conteze.", stats: { cost: 50, time: 24 } },
+        { id: 'c35', name: 'Yoga Ball', rarity: 'common', image: '/assets/img/cards/YogaBall.jpeg', desc: "Amuzant să sari pe ea. Greu să stai pe ea.", stats: { balance: 50, fun: 80 } },
+        { id: 'c36', name: 'Plastic Fork', rarity: 'common', image: '/assets/img/cards/PlasticFork.jpeg', desc: "S-a rupt când mâncai friptura.", stats: { utility: 10, durability: 0 } },
+        { id: 'c37', name: 'Rusty Plate', rarity: 'common', image: '/assets/img/cards/RustyPlate.jpeg', desc: "Fiare vechi. Nevoie de antitetanos?", stats: { weight: 20, rust: 100 } },
+        { id: 'c38', name: 'Out of Order', rarity: 'common', image: '/assets/img/cards/OutofOrder.jpeg', desc: "Aparatul pe care îl voiai e stricat.", stats: { disappointment: 100, rage: 50 } },
+        { id: 'c39', name: 'Mirror Selfie', rarity: 'common', image: '/assets/img/cards/MirrorSelfie.jpeg', desc: "Te-ai antrenat dacă nu ai postat?", stats: { narcissism: 100, gains: 0 } },
+        { id: 'c40', name: 'Callused Hands', rarity: 'common', image: '/assets/img/cards/CallusedHands.jpeg', desc: "Strângere de mână aspră. Insignă de onoare.", stats: { grip: 20, soft: -100 } }
       ]
     },
     legal: {
