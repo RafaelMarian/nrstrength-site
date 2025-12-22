@@ -107,7 +107,7 @@ function PhoneMockup() {
     }
 
     // Show video on Home and Dev Log pages
-    if (path === '/' || path === '/future') {
+    if (path === '/' || path === '/future' || path === '/training/coach') {
       return videoPlayer;
     }
 
@@ -118,24 +118,7 @@ function PhoneMockup() {
         return renderSlideshow(nutritionSlides);
       case '/profile':
         return renderSlideshow(profileSlides);
-      case '/training/coach':
-         return (
-          <div className="phone-screen-content slide-fade">
-            <div style={{fontSize: '3rem', margin: '20px 0'}}>🧠</div>
-            <h3>AI Analysis</h3>
-            <div className="fake-list">
-              <div className="fake-item active" style={{borderColor: '#a855f7'}}>
-                <div>Phase 1: Hypertrophy</div>
-                <div style={{fontSize: '0.7rem', opacity: 0.7}}>Week 3 of 12</div>
-              </div>
-              <div className="fake-item">
-                <div>⚠️ Injury Guard</div>
-                <div style={{fontSize: '0.7rem', color: 'orange'}}>Right Shoulder Protected</div>
-              </div>
-            </div>
-          </div>
-        );
-
+      
       default:
         // Fallback for any other page
         return (
