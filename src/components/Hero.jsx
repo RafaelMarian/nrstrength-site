@@ -14,7 +14,7 @@ function Hero({ text, onOpenModal }) {
           </button>
 
           {/* BUTON YOUTUBE */}
-          <a href="https://youtube.com/your-channel-link" target="_blank" rel="noreferrer">
+          <a href="https://www.youtube.com/watch?v=dlEb7lrQfss" target="_blank" rel="noreferrer">
             <button className="cta-btn big youtube-btn">
               ▶ Watch Trailer
             </button>

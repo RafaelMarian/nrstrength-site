@@ -1,8 +1,18 @@
 import React from 'react';
 
+const getStatus = (index, total) => {
+    if (index < total - 1) {
+        return { text: 'Done', icon: '✔', isPulsing: false, isActive: false };
+    }
+    if (index === total - 1) {
+        return { text: 'In Progress', icon: '🚧', isPulsing: true, isActive: true };
+    }
+    return { text: 'Planned', icon: '💡', isPulsing: false, isActive: false };
+}
+
 function Roadmap({ text }) {
-  // Verificăm dacă există lista de itemi, altfel folosim un array gol
   const items = text.items || [];
+  const totalItems = items.length;
 
   return (
     <section id="roadmap" className="roadmap-section">
@@ -11,26 +21,36 @@ function Roadmap({ text }) {
         <p style={{color: 'var(--text-muted)'}}>{text.subtitle}</p>
       </div>
 
-      <div className="timeline">
-        {items.map((item, index) => (
-          <div 
-            key={index}
-            // Dacă indexul e par (0, 2, 4) punem stânga, altfel dreapta
-            className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
-            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
-          >
-            <div className="timeline-content">
-              {/* Eticheta cu numărul fazei */}
-              <span className={`phase-tag ${index === items.length - 1 ? 'future' : ''}`}>
-                {/* Extragem doar "Faza X" din titlu sau afișăm index + 1 */}
-                Phase {index + 1}
-              </span>
-              
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
+      <div className="timeline-container">
+        <div className="timeline-line" data-aos="fade-down"></div>
+        {items.map((item, index) => {
+          const status = getStatus(index, totalItems);
+          const isLeft = index % 2 === 0;
+
+          return (
+            <div key={index} className={`timeline-row ${isLeft ? 'left' : 'right'}`}>
+              <div 
+                className={`timeline-dot ${status.isPulsing ? 'pulsing' : ''}`}
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                {/* Icon is now in the badge */}
+              </div>
+              <div 
+                className={`timeline-card ${status.isActive ? 'active-card' : ''}`}
+                data-aos="zoom-in-up"
+                data-aos-duration="800"
+              >
+                <div className={`card-badge status-${status.text.replace(' ', '-').toLowerCase()}`}>
+                    <span className="badge-icon">{status.icon}</span>
+                    <span>{status.text}</span>
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

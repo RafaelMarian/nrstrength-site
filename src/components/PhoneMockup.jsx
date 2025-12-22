@@ -1,153 +1,123 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../App.css';
-
-// NOTĂ: Dacă vrei să folosești imagini reale (screenshot-uri), 
-// înlocuiește <div>-urile din array-uri cu <img src={imagineaTa} className="slide-img" />
+import phoneVideo from '../assets/videos/phone-video.mp4';
 
 function PhoneMockup() {
   const location = useLocation();
   const path = location.pathname;
   const [slideIndex, setSlideIndex] = useState(0);
+  const [videoError, setVideoError] = useState(false);
 
-  // Resetăm indexul la 0 când schimbăm pagina
+  // Reset index and video error on page change
   useEffect(() => {
     setSlideIndex(0);
+    setVideoError(false);
   }, [path]);
 
-  // Timer pentru a schimba slide-urile automat (la fiecare 3.5 secunde)
+  // Timer for automatic slide change
   useEffect(() => {
+    // Don't run the timer on pages with the video
+    if (path === '/' || path === '/future') return;
+
     const interval = setInterval(() => {
       setSlideIndex((prev) => prev + 1);
     }, 3500);
     return () => clearInterval(interval);
-  }, []);
+  }, [path]);
 
-  // --- DEFINIREA SLIDE-URILOR PENTRU PAGINI ---
+  const handleVideoError = () => {
+    console.error("Video Error: Could not load video. Check path and file.");
+    setVideoError(true);
+  };
 
-  // 1. Slide-uri pentru TRAINING
+  // --- SLIDE DEFINITIONS ---
+
   const trainingSlides = [
-    // Slide 1: Lista de exerciții
-    <div key="t1" className="phone-screen-content slide-fade">
-      <h3>Active Workout</h3>
-      <div className="fake-list">
-        <div className="fake-item active">Squat <span style={{float:'right'}}>5x5</span></div>
-        <div className="fake-item">Bench <span style={{float:'right'}}>3x8</span></div>
-        <div className="fake-item">Row <span style={{float:'right'}}>4x10</span></div>
-      </div>
-      <div className="fake-btn">Finish Workout</div>
-    </div>,
-
-    // Slide 2: Rest Timer
-    <div key="t2" className="phone-screen-content slide-fade">
-      <h3>Rest Timer</h3>
-      <div className="circle-chart" style={{borderColor: 'var(--primary)', fontSize: '2rem'}}>
-        00:45
-      </div>
-      <p style={{marginTop: '20px', fontSize: '0.9rem'}}>Next: Bench Press Set 2</p>
-      <div className="fake-btn sec">+30s</div>
-    </div>,
-
-    // Slide 3: RPE Feedback
-    <div key="t3" className="phone-screen-content slide-fade">
-      <h3>Set Complete</h3>
-      <p>How was the effort?</p>
-      <div style={{display:'flex', gap:'5px', flexWrap:'wrap', justifyContent:'center', margin:'20px 0'}}>
-        {[6, 7, 8, 9, 10].map(n => (
-          <span key={n} style={{padding:'10px', background:'#333', borderRadius:'5px'}}>{n}</span>
-        ))}
-      </div>
-      <div className="fake-btn">Log Set</div>
-    </div>
+    '/assets/img/training/1000030365.jpg',
+    '/assets/img/training/1000030366.jpg',
+    '/assets/img/training/1000030367.jpg',
+    '/assets/img/training/1000030368.jpg',
   ];
-
-  // 2. Slide-uri pentru NUTRITION
+  
   const nutritionSlides = [
-    // Slide 1: Dashboard Macros
-    <div key="n1" className="phone-screen-content slide-fade">
-      <h3>Daily Macros</h3>
-      <div className="circle-chart">2400 kcal</div>
-      <div className="fake-list">
-        <div className="fake-item">🥩 Protein: 180g</div>
-        <div className="fake-item">🍚 Carbs: 250g</div>
-        <div className="fake-item">🥑 Fat: 70g</div>
-      </div>
-    </div>,
-
-    // Slide 2: Food Search
-    <div key="n2" className="phone-screen-content slide-fade">
-      <h3>Add Food</h3>
-      <div style={{width:'100%', padding:'10px', background:'#333', borderRadius:'8px', marginBottom:'15px', color:'#777', textAlign:'left'}}>🔍 Chicken Bre...</div>
-      <div className="fake-list">
-        <div className="fake-item">🍗 Breast (100g) <span style={{float:'right'}}>165cal</span></div>
-        <div className="fake-item">🍗 Thigh (100g) <span style={{float:'right'}}>209cal</span></div>
-      </div>
-    </div>,
-
-    // Slide 3: Water Tracker
-    <div key="n3" className="phone-screen-content slide-fade">
-      <h3>Hydration</h3>
-      <div style={{fontSize:'3rem', margin:'20px 0'}}>💧💧💧</div>
-      <p>1.5L / 3L Goal</p>
-      <div className="fake-btn" style={{background: '#3b82f6', color:'white'}}>+ Add Water</div>
-    </div>
+      '/assets/img/nutrition/1000030370.jpg',
+      '/assets/img/nutrition/1000030371.jpg',
+      '/assets/img/nutrition/1000030372.jpg',
+      '/assets/img/nutrition/1000030373.jpg',
+  ];
+  
+  const profileSlides = [
+      '/assets/img/profile/1000030352.jpg',
+      '/assets/img/profile/1000030358.jpg',
+      '/assets/img/profile/1000030359.jpg',
+      '/assets/img/profile/1000030360.jpg',
   ];
 
-  // --- LOGICA DE AFIȘARE ---
+  // Reusable Video Player component
+  const videoPlayer = (
+    <video 
+      src={phoneVideo} 
+      autoPlay 
+      loop 
+      muted 
+      playsInline
+      onError={handleVideoError}
+      className="phone-screen-content"
+      style={{ objectFit: 'cover', height: '100%', width: '100%', background: 'black' }}
+    />
+  );
+
+  // Reusable Error Display
+  const videoErrorDisplay = (
+    <div className="phone-screen-content slide-fade" style={{ backgroundColor: '#111', color: 'white', padding: '20px', textAlign: 'left', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <h3 style={{color: '#ff4d4d'}}>Video Error</h3>
+        <p style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>
+        Could not load video. Make sure the file is in the correct folder:
+        <br /><br />
+        <code style={{background: '#333', padding: '5px 8px', borderRadius: '5px', fontSize:'0.75rem'}}>
+            src/assets/videos/phone-video.mp4
+        </code>
+        </p>
+    </div>
+  );
+  
+  // --- SCREEN CONTENT LOGIC ---
+
+  const renderSlideshow = (slides) => (
+    <>
+        <img 
+            key={slideIndex} // Force re-render for animation
+            src={slides[slideIndex % slides.length]} 
+            className="phone-screen-content slide-fade"
+            style={{ objectFit: 'cover', height: '100%', width: '100%' }} 
+            alt="App Screenshot"
+        />
+        <div className="slide-dots" style={{position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 1}}>
+            {slides.map((_, i) => (
+                <div key={i} className={`dot ${(slideIndex % slides.length) === i ? 'active' : ''}`} />
+            ))}
+        </div>
+    </>
+  );
   
   const getScreenContent = () => {
+    if (videoError) {
+      return videoErrorDisplay;
+    }
+
+    // Show video on Home and Dev Log pages
+    if (path === '/' || path === '/future') {
+      return videoPlayer;
+    }
+
     switch(path) {
       case '/training':
-        // Ciclăm prin array-ul trainingSlides folosind modulo (%)
-        return (
-          <>
-            {trainingSlides[slideIndex % trainingSlides.length]}
-            {/* Dots Indicator */}
-            <div className="slide-dots">
-              {trainingSlides.map((_, i) => (
-                <div key={i} className={`dot ${(slideIndex % trainingSlides.length) === i ? 'active' : ''}`} />
-              ))}
-            </div>
-          </>
-        );
-
+        return renderSlideshow(trainingSlides);
       case '/nutrition':
-        return (
-          <>
-            {nutritionSlides[slideIndex % nutritionSlides.length]}
-            <div className="slide-dots">
-              {nutritionSlides.map((_, i) => (
-                <div key={i} className={`dot ${(slideIndex % nutritionSlides.length) === i ? 'active' : ''}`} />
-              ))}
-            </div>
-          </>
-        );
-
+        return renderSlideshow(nutritionSlides);
       case '/profile':
-        return (
-          <div className="phone-screen-content slide-fade">
-            <div className="avatar-circle">👤</div>
-            <h3>Level 12</h3>
-            <div className="fake-list">
-              <div className="fake-item">🔥 Streak: 14 Days</div>
-              <div className="fake-item">🏆 Trophies: 8</div>
-              <div className="fake-item">⚙️ Settings</div>
-            </div>
-          </div>
-        );
-
-      case '/future':
-        return (
-           <div className="phone-screen-content slide-fade">
-             <h3>Dev Log</h3>
-             <p style={{fontSize:'0.8rem', opacity:0.7}}>System Update v2.0...</p>
-             <div className="fake-item" style={{borderColor: 'var(--primary)', marginTop: '20px'}}>
-                Downloading... 
-                <div style={{height:'4px', width:'60%', background:'var(--primary)', marginTop:'5px'}}></div>
-             </div>
-           </div>
-        );
-
+        return renderSlideshow(profileSlides);
       case '/training/coach':
          return (
           <div className="phone-screen-content slide-fade">
@@ -166,22 +136,18 @@ function PhoneMockup() {
           </div>
         );
 
-      default: // Home Page
+      default:
+        // Fallback for any other page
         return (
-          <div className="phone-screen-content slide-fade">
-            <div style={{color: 'var(--primary)', fontSize: '2rem'}}>NRStrength</div>
-            <p>Welcome back, Warrior.</p>
-            <div className="fake-btn">Start Quest</div>
-            <div className="fake-btn sec">Daily Check-in</div>
-          </div>
+            <div className="phone-screen-content slide-fade">
+                <div style={{color: 'var(--primary)', fontSize: '2rem'}}>NRStrength</div>
+            </div>
         );
     }
   };
 
   return (
     <div className="hero-image-placeholder" data-aos="zoom-in">
-      {/* Notch-ul telefonului */}
-      <div className="notch"></div>
       
       {/* Ecranul care se schimbă */}
       <div className="screen-container">
