@@ -18,9 +18,9 @@ function Footer({ text }) {
 
         {/* LINKURI LEGALE AICI */}
         <div className="legal-links" style={{marginBottom: '1.5rem', display: 'flex', gap: '1.5rem', justifyContent: 'center', fontSize: '0.9rem'}}>
-          <Link to="/privacy" style={{color: 'var(--text-muted)', textDecoration: 'none'}}>
+          <a href="https://sites.google.com/view/nrstrength-privacy/pagina-de-pornire" target="_blank" rel="noopener noreferrer" style={{color: 'var(--text-muted)', textDecoration: 'none'}}>
              Privacy Policy
-          </Link>
+          </a>
           <Link to="/terms" style={{color: 'var(--text-muted)', textDecoration: 'none'}}>
              Terms & Medical
           </Link>
