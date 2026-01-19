@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png'; // Asigură-te că imaginea e acolo
 
-function Navbar({ text, lang, toggleLang, onOpenModal }) {
+function Navbar({ text, lang, toggleLang }) {
   const location = useLocation();
 
   // 1. Extragem textele. Dacă lipsesc, folosim fallback-uri în Engleză.
@@ -31,7 +31,7 @@ function Navbar({ text, lang, toggleLang, onOpenModal }) {
       <Link to="/" className="logo-link">
         <img src={logo} alt="NRStrength Logo" className="nav-logo-img" />
         {/* Poți șterge span-ul de versiune dacă vrei doar logo-ul curat */}
-        <span className="version">v2.0</span> 
+        <span className="version">v1.0.0</span> 
       </Link>
       
       {/* --- LINK-URI --- */}
@@ -86,9 +86,9 @@ function Navbar({ text, lang, toggleLang, onOpenModal }) {
         </button>
         
         {/* Buton Download/Join */}
-        <button className="cta-btn small" onClick={onOpenModal}>
+        <a href="https://play.google.com/store/apps/details?id=com.nrstrength.app" target="_blank" rel="noopener noreferrer" className="cta-btn small">
           {tNav.download || "Get App"}
-        </button>
+        </a>
       </div>
     </nav>
   );

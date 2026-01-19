@@ -6,7 +6,7 @@ import 'aos/dist/aos.css';
 // Componente
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WaitlistModal from './components/WaitlistModal';
+import SuggestionModal from './components/SuggestionModal';
 
 // Pagini
 import Hero from './components/Hero';     // Folosim Hero+Features+Roadmap ca "Home"
@@ -23,17 +23,17 @@ import LegalPage from './pages/LegalPage';
 import CollectionPage from './pages/CollectionPage'; // Importăm Cărțile
 
 // Componenta Home (vechiul Landing Page)
-const Home = ({ text, onOpenModal }) => (
+const Home = ({ text, onOpenSuggestionModal }) => (
   <>
-    <Hero text={text.hero} onOpenModal={onOpenModal} />
-    <Features text={text.features} />
+    <Hero text={text.hero} />
+    <Features text={text.features} onOpenSuggestionModal={onOpenSuggestionModal} />
     <Roadmap text={text.roadmap} />
   </>
 );
 
 function App() {
   const [lang, setLang] = useState('en');
-  const [showModal, setShowModal] = useState(false);
+  const [showSuggestionModal, setShowSuggestionModal] = useState(false);
   const toggleLang = () => setLang(lang === 'en' ? 'ro' : 'en');
   const text = content[lang];
 
@@ -48,11 +48,10 @@ function App() {
           text={text} // Trimitem tot textul pt noile linkuri
           lang={lang} 
           toggleLang={toggleLang} 
-          onOpenModal={() => setShowModal(true)} 
         />
         
         <Routes>
-          <Route path="/" element={<Home text={text} onOpenModal={() => setShowModal(true)} />} />
+          <Route path="/" element={<Home text={text} onOpenSuggestionModal={() => setShowSuggestionModal(true)} />} />
           <Route path="/training" element={<TrainingPage text={text} />} />
           <Route path="/training/coach" element={<CoachPage text={text} />} />
           <Route path="/nutrition" element={<NutritionPage text={text} />} />
@@ -63,7 +62,7 @@ function App() {
           <Route path="/collection" element={<CollectionPage text={text} />} /> {/* Cards */}
         </Routes>
 
-        {showModal && <WaitlistModal onClose={() => setShowModal(false)} text={text} />}
+        {showSuggestionModal && <SuggestionModal onClose={() => setShowSuggestionModal(false)} />}
         <Footer text={text.footer} />
       </div>
     </Router>

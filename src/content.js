@@ -22,7 +22,8 @@ export const content = {
       analytics_title: "Pro Analytics",
       analytics_desc: "3D Barbell visualization, Muscle Balance Radar, and Readiness Score for data nerds.",
       privacy_title: "Offline & Private",
-      privacy_desc: "Your Data, Your Gains. Works offline, stores data locally. We don't sell your history."
+      privacy_desc: "Your Data, Your Gains. Works offline, stores data locally. We don't sell your history.",
+      suggest_cta: "Have an Idea? Suggest a Feature!"
     },
     roadmap: {
       title: "The Roadmap",
@@ -31,7 +32,9 @@ export const content = {
         { title: "Phase 1: Idea", desc: "I was at the gym and I had to note all workouts on a notebook. Then I had to make a working plan, so why don't I build an app for this?" },
         { title: "Phase 2: Implementation", desc: "Starting to implement in Dart, learning, improving." },
         { title: "Phase 3: First Prototype", desc: "First prototype was made, it was tested and the feedback was mixed so I had to improve." },
-        { title: "Phase 4: MVP", desc: "MVP is ready for testing and feedback." }
+        { title: "Phase 4: MVP", desc: "MVP is ready for testing and feedback." },
+        { title: "Phase 5: Release", desc: "The app is now available on Google Play." },
+        { title: "Phase 6: Future updates", desc: "Working on new features and improvements." }
       ]
     },
     testimonials: {
@@ -103,9 +106,9 @@ export const content = {
       items: [
         { id: 1, title: "Smart Coach Upgrade", category: "planned", votes: 0, desc: "New features and system improvements." },
         { id: 2, title: "Card Battle System", category: "planned", votes: 0, desc: "Challenge a friend to a lifting duel using cards." },
-        { id: 3, title: "Nutrition Revamp", category: "in_progress", votes: 0, desc: "Scan barcodes to track macros instantly." },
+        { id: 3, title: "Nutrition Revamp", category: "in_progress", votes: 0, desc: "Update the functinality of the nutrition page" },
         { id: 4, title: "GPS Route Tracking", category: "in_progress", votes: 0, desc: "View your running routes directly on the map." },
-        { id: 5, title: "Cloud Save System", category: "done", votes: 0, desc: "Login interface & Firebase Gold sync." }
+        { id: 5, title: "MVP ready and launched on google play store", category: "done", votes: 0, desc: "The app is now live on the Google Play Store." }
       ]
     },
     trainingPage: {
@@ -438,7 +441,8 @@ export const content = {
       analytics_title: "Analize Pro",
       analytics_desc: "Vizualizare 3D a barei, Radar de Balans Muscular și Scored de Pregătire pentru pasionații de date.",
       privacy_title: "Offline & Privat",
-      privacy_desc: "Datele tale, Mușchii tăi. Funcționează fără net, stocare locală. Nu îți vindem istoricul."
+      privacy_desc: "Datele tale, Mușchii tăi. Funcționează fără net, stocare locală. Nu îți vindem istoricul.",
+      suggest_cta: "Ai o Idee? Sugerează o Funcționalitate!"
     },
     roadmap: {
       title: "Evoluția Proiectului",
@@ -447,7 +451,9 @@ export const content = {
         { title: "Faza 1: Ideea", desc: "Eram la sală și trebuia să-mi notez toate antrenamentele într-un caiet. Apoi a trebuit să fac un plan de antrenament, așa că mi-am zis: de ce să nu construiesc o aplicație pentru asta?" },
         { title: "Faza 2: Implementarea", desc: "Am început implementarea în Dart, învățând și îmbunătățind constant procesul." },
         { title: "Faza 3: Primul Prototip", desc: "Primul prototip a fost realizat și testat. Feedback-ul a fost mixt, așa că a trebuit să aduc îmbunătățiri." },
-        { title: "Faza 4: MVP", desc: "MVP-ul este gata pentru testare și feedback din partea utilizatorilor." }
+        { title: "Faza 4: MVP", desc: "MVP-ul este gata pentru testare și feedback din partea utilizatorilor." },
+        { title: "Faza 5: Lansare", desc: "Aplicația este acum disponibilă pe Google Play." },
+        { title: "Faza 6: Actualizări viitoare", desc: "Se lucrează la noi funcționalități și îmbunătățiri." }
       ]
     },
     testimonials: {
@@ -519,9 +525,9 @@ export const content = {
       items: [
         { id: 1, title: "Adaptare Smart Coach", category: "planned", votes: 0, desc: "Noi functii si modificari." },
         { id: 2, title: "Joc de carti", category: "planned", votes: 0, desc: "Provoacă un prieten la un duel de ridicări." },
-        { id: 3, title: "Modificare pagina de nutritie", category: "in_progress", votes: 0, desc: "Scanează coduri de bare pentru calorii." },
+        { id: 3, title: "Modificare pagina de nutritie", category: "in_progress", votes: 0, desc: "Actualizarea funcționalității paginii de nutriție" },
         { id: 4, title: "Map", category: "in_progress", votes: 0, desc: "Poti sa vezi ruta ta pe mapa." },
-        { id: 5, title: "Testare", category: "done", votes: 0, desc: "Testare" }
+        { id: 5, title: "MVP gata și lansat pe Google Play Store", category: "done", votes: 0, desc: "Aplicația este acum live pe Google Play Store." }
       ]
     },
     trainingPage: {

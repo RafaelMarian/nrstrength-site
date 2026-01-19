@@ -1,4 +1,4 @@
-function Features({ text }) {
+function Features({ text, onOpenSuggestionModal }) {
   return (
     <section id="features" className="features-section">
       <h2 data-aos="fade-up">{text.title}</h2>
@@ -28,6 +28,11 @@ function Features({ text }) {
           <p>{text.privacy_desc}</p>
         </div>
 
+      </div>
+      <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+        <button className="cta-btn big" onClick={onOpenSuggestionModal}>
+          {text.suggest_cta || "Have an Idea? Suggest a Feature!"}
+        </button>
       </div>
     </section>
   );
