@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function WaitlistModal({ onClose, text }) {
+function WaitlistModal({ onClose }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null); // null, 'sending', 'success', 'error'
 

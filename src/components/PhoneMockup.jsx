@@ -3,17 +3,14 @@ import { useLocation } from 'react-router-dom';
 import '../App.css';
 import phoneVideo from '../assets/videos/phone-video.mp4';
 
-function PhoneMockup() {
+// The component's logic is moved here. Its state will be reset when its key changes.
+function PhoneMockupContent() {
   const location = useLocation();
   const path = location.pathname;
   const [slideIndex, setSlideIndex] = useState(0);
   const [videoError, setVideoError] = useState(false);
 
-  // Reset index and video error on page change
-  useEffect(() => {
-    setSlideIndex(0);
-    setVideoError(false);
-  }, [path]);
+  // The problematic useEffect is removed. State is now reset by the key on the parent.
 
   // Timer for automatic slide change
   useEffect(() => {
@@ -138,6 +135,13 @@ function PhoneMockup() {
       </div>
     </div>
   );
+}
+
+// This wrapper component ensures PhoneMockupContent is re-mounted when the path changes.
+function PhoneMockup() {
+    const location = useLocation();
+    // Using location.pathname as a key is a React pattern to reset a component's state.
+    return <PhoneMockupContent key={location.pathname} />;
 }
 
 export default PhoneMockup;
